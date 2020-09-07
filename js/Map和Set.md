@@ -62,4 +62,21 @@ forEach
  - Set 是值的集合，按照插入顺序迭代元素，set的值是唯一的
 ## Set对象通过构造函数 Set()创建
 	var mySet = new Set()
-## 
+## Set 属性
+ - size
+## Set 方法
+1. add(val) 末尾添加，返回Set对象
+2. clear() 移除所有
+3. delete(val) 删除val
+4. entries() 返回一个新的迭代器对象
+5. forEach()
+6. has(val)
+7. keys() 与values方法相同，返回新的迭代器对象
+8. values()
+## Set 迭代方法
+ - for...of
+ - forEach
+## array 和 Set对象 相互转换
+	mySet = new Set([1, 2, 3, 4]);
+	[...mySet];  
+	Array.from(mySet)
