@@ -29,10 +29,11 @@
  - 外观和行为像数组，但是不共享他们所有的方法
     例如：函数内部可用的arguments对象
  -可以通过array的prototype（原生）方法可以处理类数组对象
-    例如：1. Array.prototype.forEach.call(arguments, item => {
+ - 例如：
+	1. Array.prototype.forEach.call(arguments, item => {
 				console.log(item);
 			});
-		  2. Array.prototype.reduce.call("astring", function(all,now) {
+	2. Array.prototype.reduce.call("astring", function(all,now) {
 				return now+all
 			},''); // 字符串倒叙
 
