@@ -3,6 +3,24 @@
  * 结果：start end 1 2 3 7 8 
 */
 console.log("start")
+async function asyncFun() {
+	await new Promise((resolve, reject) => {
+		setTimeout( () => {
+			console.log(22222)
+			resolve()
+		}, 0 )
+	}).then( () => {
+		console.log(33333)
+	})
+}
+asyncFun()
+
+new Promise( (resolve,reject) => {
+	console.log(44444444)
+	resolve()
+}).then( () => {
+	console.log(55555555555)
+})
 setTimeout(()=>{
     console.log('1')
     new Promise(function(resolve){
