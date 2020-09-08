@@ -1,0 +1,57 @@
+# class
+ - class是基于原型的继承的语法糖
+ - class 声明没有提升
+ - 类不能继承常规对象
+
+## 创建class
+1. class className {}
+2. var className = class {}
+
+## constructor
+ - 一个class只允许有一个构造函数
+ - 在构造函数里可以使用super()调用一个父类的构造函数
+
+## 静态方法 static
+ - 不能通过类的实例调用静态方法
+
+## 实例属性
+ - 实例属性必须定义在类的方法里
+
+## 字段声明
+ - 公有
+
+ 		class test{
+			 height;
+		 }
+ - 私有 
+
+		class test{
+			 #height;
+		 }
+
+## 通过 extends 创建子类
+ - 如果子类中定义了构造函数，那么它必须先调用 super() 才能使用 this 。
+
+		class temp{
+
+		}
+
+		class temp1 extends temp {
+
+		}
+
+## super 调用超类
+
+		class Rectangle {
+			constructor() {}
+			static logNbSides() {
+				return 'I have 4 sides';
+			}
+		}
+
+		class Square extends Rectangle {
+			constructor() {}
+			static logDescription() {
+				return super.logNbSides() + ' which are all equal';
+			}
+		}
