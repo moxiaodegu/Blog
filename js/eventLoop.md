@@ -17,18 +17,21 @@
 		console.log('script start')
 
 		// 这边的 await 可能不太好理解，我换成了另一种写法
-		function async1() {
-		async2().then(res => {
-			console.log('async1 end')
-			setTimeout(function() {
-				console.log('setTimeout222222')
-			}, 0)
-		})
+		async function async1() {
+			await async2().then(res => {
+				console.log('async1 end')
+				setTimeout(function() {
+					console.log('setTimeout222222')
+				}, 0)
+			})
+
+			console.log('gggggggggggggggggggg')
 		}
 		function async2() {
-		console.log('async2 end')
-		return Promise.resolve(undefined);
+			console.log('async2 end')
+			return Promise.resolve(undefined);
 		}
+
 		async1()
 
 		setTimeout(function() {

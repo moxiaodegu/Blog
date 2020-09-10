@@ -12,6 +12,8 @@ async function asyncFun() {
 	}).then( () => {
 		console.log(33333)
 	})
+
+	console.log(eeeee)
 }
 asyncFun()
 
