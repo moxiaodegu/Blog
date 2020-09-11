@@ -2,6 +2,8 @@
  - class是基于原型的继承的语法糖
  - class 声明没有提升
  - 类不能继承常规对象
+ - class实现继承更加易读，易理解
+ - 更后端语法很像
 
 ## 创建class
 1. class className {}
