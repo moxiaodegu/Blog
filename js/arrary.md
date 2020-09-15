@@ -8,7 +8,7 @@
 7. slice 从数组移除或替换一些元素
 8. reverse 颠倒数组的顺序
 9. sort 数组排序，也可有回调函数，判断如何排序数组
-10. indexOf/lastIndexOf 在数组中搜索，并返回索引
+10. indexOf/lastIndexOf 在数组中搜索，并返回索引(indexOf:第一次出现的位置、lastIndexOf最后一次出现的位置)
 11. forEach 在每个数组元素上执行callback
 12. map 创建一个新数组，数组元素是元素组通过执行callback得来
 13. filter 返回一个在回调函数上返回true的元素的新数组
