@@ -38,7 +38,12 @@
 			},''); // 字符串倒叙
 
 # 数组推导式
- 
+
+# 数组选取最大值
+1. Math.max(...arr)
+2. Math.max.apply(...arr)
+3. sort()
+4. reduce
 
 
 

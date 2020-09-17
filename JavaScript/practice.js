@@ -77,3 +77,44 @@ Array.prototype.__proto__ === Object.prototype
 // true
 Object.prototype.__proto__
 // null
+
+var restoreString = function(s, indices) {
+    var map = new Map();
+    let str = '';
+    Array.prototype.forEach.call(s,(e,i)=> {
+        map.set(indices[i],e)
+    })
+	let len = map.keys()
+	console.log(len)
+	len.sort( (a, b) => a-b).forEach( e => {
+        str += map.get(e)
+    })
+    
+    return str
+    
+};
+
+var restoreString = function(s, indices) {
+	let arr = new Array(s.length);
+	console.log(arr)
+    for (let i = 0; i < indices.length; i++) {
+		console.log(arr[indices[i]],s[i])
+		arr[indices[i]] = s[i]
+	};
+    return arr.join("");
+};
+
+var smallerNumbersThanCurrent = function(nums) {
+    const sorter = (a,b) => a-b;
+    const mapper = (v,i) => [v,i];
+	const tempMap = new Map([...nums].sort(sorter).map(mapper).reverse());
+	console.log(nums)
+	console.log([...nums])
+	console.log([...nums].sort(sorter))
+	console.log([...nums].sort(sorter).map(mapper))
+	console.log([...nums].sort(sorter).map(mapper).reverse())
+	console.log(tempMap)
+    return nums.map(x => tempMap.get(x));
+};
+
+sod
