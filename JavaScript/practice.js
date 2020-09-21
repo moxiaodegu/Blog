@@ -116,5 +116,3 @@ var smallerNumbersThanCurrent = function(nums) {
 	console.log(tempMap)
     return nums.map(x => tempMap.get(x));
 };
-
-sod
