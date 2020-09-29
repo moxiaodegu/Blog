@@ -24,3 +24,5 @@
 	- catch 失败回调
 	- then(onFulfilled, onRejected) 成功失败都会回调
 	- finally(onFinally) 不管成功失败完成promise 就回调
+
+

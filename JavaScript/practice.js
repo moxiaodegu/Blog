@@ -129,4 +129,26 @@ let circle = function () {};
 let shape = {};
 let circle = new circle();
 
+var xorOperation = function(n, start) {
+    let num;
+    for(let i = 0; i<= n; i++) {
+		console.log((start + i * 2))
+        num ^= (start + i * 2)
+    }
+    // return num
+};
+
+var detectCapitalUse = function(word) {
+    let flag = 0,acc = 0;
+    for(let i = 0; i< word.split('').length; i++) {
+        if (i === 0 && word === i.toUpperCase()){
+            continue;
+		}
+	    acc ++;
+        flag += i === i.toUpperCase() ? 1 : -1 ;
+    }
+    
+    return Math.abs(flag) === acc ? true : false;
+};
+
 

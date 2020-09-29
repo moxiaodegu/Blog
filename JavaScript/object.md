@@ -17,6 +17,7 @@
 	  this.age = age;
    }
    var obj = new ObjCur('limi', 30)
+   
 3.Object.create()
 
 # 继承

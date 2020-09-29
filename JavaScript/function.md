@@ -3,6 +3,14 @@
  - var foo = function() {}
  - var foo = function ber() {}
 
+ ## 方法
+ 1. apply 
+	> 第一个参数改变this指向，第二个参数必须是个数组，第一个参数为null this指向全局
+ 2. bind
+	> 返回修改后的新函数，不管怎么调用，都是相同的this值
+3. call
+	> 第一个参数改变this指向，可添加多个参数，第一个参数为null this 指向全局
+
 # 立即执行函数
  - (function(){})()    常用
  - (function(){}())    w3c推介
