@@ -54,6 +54,8 @@ forEach
  - 使用Array.form()可以把Map对象转化成一个二维键值对数组
 
 		Array.form(myMap) 或者 [...myMap]
+## Map转对象
+ - Object.fromEntries(map);
  
  ## Map 合并
  - Map对象同数组进行合并时，如果有重复的键值，则后面的会覆盖前面的。
