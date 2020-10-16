@@ -1,7 +1,7 @@
 # Array 方法
 1. Array.from() 把类数组对象/可迭代对象浅拷贝创建一个新的数组
 2. Array.isArray()判断是否是数组
-3. Array.of()
+3. Array.of() 创建数组 和Array()区别：Array(5) 创建[,,,,]，Array.of(5) 创建[5]
 # Array 实例方法
 
 ### 修改器方法
@@ -12,7 +12,7 @@
 4. unshift 在数组开头添加一个或者多个元素，返回数组新长度
 5. splice 删除元素
 6. reverse 颠倒数组的顺序slic
-7. sort 数组排序，也可有回调函数，判断如何排序数组
+7. sort 数组排序，也可有回调函数，判断如何排序数组 省略回调函数会通过元素Unicode位点进行排序。
 
 ### 访问方法
 1. concat 连接两个数组，并返回一个新数组。
@@ -37,6 +37,22 @@
 9. keys 返回所有索引键的对象
 10. values 返回包含所有值的对象
 11. entries 返回键值对的对象
+12. flat 指定深度递归数组并返回一个数组子数组的所有元素的新数组，用于展开多维数组
+13. flatMap 使用映射函数映射每一个元素，将结果压缩成一个新数组。类似于 map连着深度值为1的flat  
+
+		// Let's say we want to remove all the negative numbers and split the odd numbers into an even number and a 1
+		let a = [5, 4, -3, 20, 17, -33, -4, 18]
+		//       |\  \  x   |  | \   x   x   |
+		//      [4,1, 4,   20, 16, 1,       18]
+
+		a.flatMap( (n) =>
+		(n < 0) ?      [] :
+		(n % 2 == 0) ? [n] :
+						[n-1, 1]
+		)
+
+		// expected output: [4, 1, 4, 20, 16, 1, 18]
+
 
 # foreach 和 map 的区别
  - map分配内存空间存储新数组并返回，forEach()不会返回数据。
