@@ -13,16 +13,21 @@
  - Promise.prototype
 
 ## 方法
- - Promise.all([Promise1,Promise2]) 处理多个Promise 对象
- - Promise.reject(reason) 返回失败的promise对象
- - Promise.resolve(value) 返回一个状态由给定value决定的Promise对象。
+### Promise.all([Promise1,Promise2...]) 处理多个Promise 对象
+> Promise.all() 并行执行。按顺序输出	 
+ - 如果传入的可迭代对象为空, promise.all会同步返回一个resolved的promise对象，返回结果是空数组
+- 如果传入的promise对象都返回resolved，或者了迭代对象里没有promise，promise.all 异步返回promise对象，返回结果是一个包含返回值的数组
+ - 如果传入的promise对象有一个返回rejected，orimise.all异步返回第一个返回rejected回调函数，不管其他是否完成
+
+### Promise.allsetled([promise1....]) 
+
 
 ## promise 原型
  - 属性
 	- promise.prototype.constructor
  - 方法
-	- catch 失败回调
-	- then(onFulfilled, onRejected) 成功失败都会回调
+ 	- then(onFulfilled, onRejected) 成功失败都会回调
+	- catch(onRejected) 失败回调，.catch() 其实只是没有给 handleFulfilled 预留参数位置的 .then() 而已
 	- finally(onFinally) 不管成功失败完成promise 就回调
 
 
