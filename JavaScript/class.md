@@ -25,39 +25,41 @@
 
 ## 字段声明
  - 公有
-
- 		class test{
-			 height;
-		 }
+	```javascript
+	class test{
+		height;
+	}
+	```
  - 私有 
-
-		class test{
-			 #height;
-		 }
-
+	```javascript
+	class test{
+		#height;
+	}
+	```
 ## 通过 extends 创建子类
  - 如果子类中定义了构造函数，那么它必须先调用 super() 才能使用 this 。
+	```javascript
+	class temp{
 
-		class temp{
+	}
 
-		}
+	class temp1 extends temp {
 
-		class temp1 extends temp {
-
-		}
-
+	}
+	```
 ## super 调用超类
+```javascript
+class Rectangle {
+	constructor() {}
+	static logNbSides() {
+		return 'I have 4 sides';
+	}
+}
 
-		class Rectangle {
-			constructor() {}
-			static logNbSides() {
-				return 'I have 4 sides';
-			}
-		}
-
-		class Square extends Rectangle {
-			constructor() {}
-			static logDescription() {
-				return super.logNbSides() + ' which are all equal';
-			}
-		}
+class Square extends Rectangle {
+	constructor() {}
+	static logDescription() {
+		return super.logNbSides() + ' which are all equal';
+	}
+}
+```

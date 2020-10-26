@@ -13,7 +13,7 @@
 4. I/O （node）
 ## 微任务
 1.promise
-
+	```javascript
 		console.log('script start')
 
 		// 这边的 await 可能不太好理解，我换成了另一种写法
@@ -50,4 +50,5 @@
 		})
 
 		console.log('script end')
-	 <!-- <!-- script start async2 end Promise script end async1 end promise1 promise2 setTimeout setTimeout222222 -->
+		<!-- <!-- script start async2 end Promise script end async1 end promise1 promise2 setTimeout setTimeout222222 -->
+	```
