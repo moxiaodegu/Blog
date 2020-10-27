@@ -5,11 +5,16 @@
 
 ## 方法
  1. apply 
-	> 第一个参数改变this指向，第二个参数必须是个数组，第一个参数为null this指向全局
+    > func.apply(thisArg, [argsArray])
+	- 第一个参数改变this指向，非严格模式下 第一个参数为null或undefind this指向全局
+	- 第二个参数可选，数组或类数组对象，如果不传，则表示不需要传值
  2. bind
-	> 返回修改后的新函数，不管怎么调用，都是相同的this值
+    > function.bind(thisArg[, arg1[, arg2[, ...]]])
+	- 创建新函数
+	- 如果 bind 函数的参数列表为空，或者thisArg是null或undefined，执行作用域的 this 将被视为新函数的 thisArg。
 3. call
-	> 第一个参数改变this指向，可添加多个参数，第一个参数为null this 指向全局
+    > function.call(thisArg, arg1, arg2, ...)
+	- 第一个参数改变this指向，可添加多个参数，非严格模式下，第一个参数为null或者undefind this 指向全局
 
 ## 立即执行函数
  - (function(){})()    常用
