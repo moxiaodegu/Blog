@@ -1,11 +1,12 @@
 # Array 方法
 1. Array.from() 把类数组对象/可迭代对象浅拷贝创建一个新的数组
+	> 类数组对象：有length属性的对象、arguments对象、nodeList对象
+	> 可迭代对象：string、 set、map、Generator函数
 2. Array.isArray()判断是否是数组
 3. Array.of() 创建数组 和Array()区别：Array(5) 创建[,,,,]，Array.of(5) 创建[5]
+
 # Array 实例方法
-
 ### 修改器方法
-
 1. push 末尾添加数组，返回数组长度 （一个或多个）
 2. pop 末尾删除数组，返回数组长度
 3. shift 移除数组第一个元素，并返回该元素
