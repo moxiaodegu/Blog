@@ -7,6 +7,7 @@
  - Map 的key是有序的， Object 的key是无序的
  - Map可通过size获取键值个数，object只能通过手动计算
  - 在频繁操作键值对场景下Map 表现更好
+ - map遍历遵循元素插入顺序
 
 ## Map 对象通过构造函数	Map() 创建
  - var map = new Map()
@@ -54,15 +55,23 @@ forEach
  - 使用Array.form()可以把Map对象转化成一个二维键值对数组
 
 		Array.form(myMap) 或者 [...myMap]
+
 ## Map转对象
  - Object.fromEntries(map);
  
  ## Map 合并
  - Map对象同数组进行合并时，如果有重复的键值，则后面的会覆盖前面的。
+
+# weakMap
+  > 键值对集合，键必须是对象，值可以是任意的
+  - 键被弱保持，当键所指对象没有其他地方引用时，会被垃圾回收机制回收。
+  - 键是不可枚举的
+  - 键值 null当作undefined
  
 
 # Set（集合）
  - Set 是值的集合，按照插入顺序迭代元素，set的值是唯一的
+
 ## Set对象通过构造函数 Set()创建
 	var mySet = new Set()
 ## Set 属性
@@ -83,3 +92,9 @@ forEach
 	mySet = new Set([1, 2, 3, 4]);
 	[...mySet];  
 	Array.from(mySet)
+
+# weakSet
+ - 对象的集合
+ - 弱引用 如果没有其他对weakset内对象的引用，垃圾回收机制会回收掉。
+ - null当作undefined
+
