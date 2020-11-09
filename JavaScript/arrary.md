@@ -57,8 +57,7 @@
 
 # foreach 和 map 的区别
  - map分配内存空间存储新数组并返回，forEach()不会返回数据。
- - forEach()允许callback更改原始数组的元素。map()不允许
- - foreach 执行速度快于map
+ - map和foreach都不改变原数组、都不可以中途停止
 
 # 类数组对象
  - 外观和行为像数组，但是不共享他们所有的方法
