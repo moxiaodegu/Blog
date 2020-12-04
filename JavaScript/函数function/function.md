@@ -2,6 +2,7 @@
  - function foo() {}
  - var foo = function() {}
  - var foo = function ber() {}
+ - var foo = new Function('a','return a')
 
 ## 方法
  1. apply 
@@ -58,6 +59,8 @@
  1. 构造函数首字母大写
  2. 调用方式不同，构造函数 通过 new调用
  3. 作用不同，构造函数用来创建实例对象
+ 4. 构造函数Function()创建和函数表达式的区别
+    > 构造函数不能创建当前函数的闭包，在函数内通过new创建函数，作用域指向全局作用域，不是当前的函数作用域
 
  ## 函数提升
  ### 什么是提升
