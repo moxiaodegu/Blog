@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn"></button>
+</body>
+<script>
+    const broad = new BroadcastChannel('myBtn')
+    const btn = document.querySelector('#btn')
+    btn.textContent= '未收藏'
+    btn.addEventListener('click',function(event){
+        event.stopPropagation()
+        event.preventDefault()
+        btn.textContent = btn.textContent == '已收藏' ? '未收藏':'已收藏'
+        broad.postMessage(btn.textContent)
+    })
+</script>
+</html>

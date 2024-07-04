@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .a{
+        color: red;
+    }
+    .b {
+        font-size: 20px;
+    }
+</style>
+<body>
+    <div onclick="click1()">
+        <p class="son">22
+            <span>33</span>
+        </p>
+    </div>
+</body>
+<script>
+    function click1 (){
+        console.log(222)
+    }
+    
+    var p = document.querySelector(".son")
+    p.setAttribute("class","a b")
+    p.addEventListener ("click",function(event){event.preventDefault();console.log(333)},true)
+    const evt  = new Event("click")
+    var span = document.querySelector("span")
+    span.addEventListener("click",function(event){event.preventDefault();},true)
+    const jg = p.dispatchEvent(evt) 
+ </script>
+</html>

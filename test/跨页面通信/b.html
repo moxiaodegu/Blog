@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div"></div>
+    <div id="local"></div>
+</body>
+<script>
+    // broadcastChannel
+    const div = document.querySelector('#div')
+    const broad = new BroadcastChannel('myBtn')
+    broad.onmessage = function(data){
+        div.textContent= data.data
+    }
+
+    // localStorage
+    const local = document.querySelector('#local')
+    window.addEventListener('storage',function(event){
+        console.log(event.newValue)
+        local.textContent=event.newValue
+    })
+</script>
+</html>
