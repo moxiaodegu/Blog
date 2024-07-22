@@ -19,7 +19,7 @@ class Scheduler {
 
   // 执行函数
   runTask(promise) {
-    promise.then((data)=>{
+    promise().then((data)=>{
       console.log(data) // 执行结果
     }).finally(()=>{
       const index = this.work.indexOf(promise)  // 找到执行数据下标
@@ -33,10 +33,11 @@ class Scheduler {
 
 const scheduler = new Scheduler(2)
 
-scheduler.add(new Promise((resolve)=>setTimeout(()=>{resolve(1)},3000)))
-scheduler.add(new Promise((resolve)=>setTimeout(()=>{resolve(2)},2000)))
-scheduler.add(new Promise((resolve)=>setTimeout(()=>{resolve(3)},5000)))
-scheduler.add(new Promise((resolve)=>setTimeout(()=>{resolve(4)},500)))
+
+scheduler.add(()=>{ return new Promise((resolve)=>setTimeout(()=>{resolve(1)},3000))})
+scheduler.add(()=>{ return new Promise((resolve)=>setTimeout(()=>{resolve(2)},2000))})
+scheduler.add(()=>{ return new Promise((resolve)=>setTimeout(()=>{resolve(3)},5000))})
+scheduler.add(()=>{ return new Promise((resolve)=>setTimeout(()=>{resolve(4)},500))})
 
 
 
