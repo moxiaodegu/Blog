@@ -1,0 +1,49 @@
+      
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+  //有一堆扑克牌，将牌堆第一张放到桌子上，再将接下来的牌堆的第一张放到牌底，如此往复；
+
+  // 最后桌子上的牌顺序为： (牌底) 1,2,3,4,5,6,7,8,9,10,11,12,13 (牌顶)；
+
+  // 问：原来那堆牌的顺序，用函数实现。
+
+
+  let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+
+  function reverse(arr) {
+    let i= 1
+    let res = []
+    while (arr.length) {
+      if(i % 2) {
+        // console.log(arr.pop(),333)
+        res.unshift(arr.pop())
+        console.log([...res],6666)
+      }else {
+        // console.log(arr.pop(),444)
+        res.unshift(res.pop())
+        console.log([...res],7777)
+      }
+      i++
+      // console.log(res)
+    }
+    return res fil
+  }
+
+  console.log(reverse(arr)) // [1, 12, 2, 8, 3, 11, 4, 9, 5, 13, 6, 10, 7]
+
+
+</script>
+
+    

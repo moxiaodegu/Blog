@@ -1,0 +1,36 @@
+      
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+let obj = { a: 1, b: { c: 2 }, d: [1, 2, 3], e: [{ f: [4, 5, 6] }] };
+let r1 = parse(obj, 'a');// = 1;
+let r2 = parse(obj, 'b.c');// = 2;
+let r3 = parse(obj, 'd[2]');// = 3;
+let r4 = parse(obj, 'e[0].f[0]');// = 4;
+console.log(r1, r2, r3, r4);
+// function parse(obj, str) {
+//  	let fn =  new Function('obj', 'return obj.' + str);
+// 	return fn(obj)
+// }
+function parse(obj, str) {
+  console.log(str)
+	str = str.replace(/\[(\d+)\]/g, '.$1');
+  console.log(str)
+	let arr = str.split('.');
+	arr.forEach(function (item) {
+			obj = obj[item];
+	})
+	return obj;
+}
+	</script>
+</body>
+</html>
+
+    

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  // html 标签结构
+  <img data-src="./public/image/VCG211430870249.jpg" src="./public/image/默认.jpg" alt="">
+  <img data-src="./public/image/VCG211430987515.jpg" src="./public/image/默认.jpg" alt="">
+  <img data-src="./public/image/VCG211431054751.jpg" src="./public/image/默认.jpg" alt="">
+  <img data-src="./public/image/VCG211435102490.jpg" src="./public/image/默认.jpg" alt="">
+  <img data-src="./public/image/VCG211438229829.jpg" src="./public/image/默认.jpg" alt="">
+  <img data-src="./public/image/VCG211438109615.jpg" src="./public/image/默认.jpg" alt="">
+  // html 标签结构
+  <img data-src="./public/image/VCG211430870249.jpg" src="./public/image/默认.jpg" alt="">
+  <img data-src="./public/image/VCG211430987515.jpg" src="./public/image/默认.jpg" alt="">
+  <img data-src="./public/image/VCG211431054751.jpg" src="./public/image/默认.jpg" alt="">
+  <img data-src="./public/image/VCG211435102490.jpg" src="./public/image/默认.jpg" alt="">
+  <img data-src="./public/image/VCG211438229829.jpg" src="./public/image/默认.jpg" alt="">
+  <img data-src="./public/image/VCG211438109615.jpg" src="./public/image/默认.jpg" alt="">
+  // html 标签结构
+  <img data-src="./public/image/VCG211430870249.jpg" src="./public/image/默认.jpg" alt="">
+  <img data-src="./public/image/VCG211430987515.jpg" src="./public/image/默认.jpg" alt="">
+  <img data-src="./public/image/VCG211431054751.jpg" src="./public/image/默认.jpg" alt="">
+  <img data-src="./public/image/VCG211435102490.jpg" src="./public/image/默认.jpg" alt="">
+  <img data-src="./public/image/VCG211438229829.jpg" src="./public/image/默认.jpg" alt="">
+  <img data-src="./public/image/VCG211438109615.jpg" src="./public/image/默认.jpg" alt="">
+</body>
+<script>
+  const imgs = document.querySelectorAll('img')
+
+  const observer = new IntersectionObserver(lazyload)
+  function lazyload (imgArr) {
+    imgArr.forEach(img => {
+      if(img.isIntersecting) { //判断是否进入视野区
+        img.target.src = img.dataset.src; // 进入的话加在图片
+        observer.unobserve(img) // 避免重复渲染
+      }
+    });
+  } 
+  imgs.forEach(img => {
+    observer.observe(img) //  监听图片进入可视区离开视野区触发
+  })
+</script>
+</html>

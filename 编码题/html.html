@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input value="" onchange="debounce(a,3000)('4444')" />
+  <bottom id="bottom" onclick="b()">点击</bottom>
+</body>
+<script>
+
+function a(a){console.log('click',a)}
+function debounce(fun,time) {
+  let timer;
+  return function(){
+    clearTimeout(timer)
+    const args = arguments
+    timer = setTimeout(()=>{
+      fun(args)
+    },time)
+  }
+}
+
+function throttle(fun,time) {
+   let flag;
+   return function() {
+    if (!flag) {
+      flag= true
+      fun(arguments)
+      setTimeout(()=>{
+        flag = false
+      },time)
+    }
+   }
+}
+
+const b = throttle(a,3000)
+
+// const id = document.getElementById('bottom')
+// id.onclick = throttle(a,3000)
+</script> 
+</html>
