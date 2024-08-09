@@ -1,0 +1,1 @@
+shortestToChar('weeeeefvvvv','e')
